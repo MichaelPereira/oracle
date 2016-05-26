@@ -23,8 +23,10 @@
 # The argument to useradd's -g option must be an already existing
 # group, else useradd will raise an error.
 # Therefore, we must create the oinstall group before we do the oracle user.
-group 'oinstall' do
-  gid node[:oracle][:user][:gid]
+unless node[:oracle][:user][:oinstall_group_exists]
+  group 'oinstall' do
+    gid node[:oracle][:user][:gid]
+  end
 end
 
 user 'oracle' do

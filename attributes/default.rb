@@ -19,6 +19,7 @@
 default[:oracle][:user][:uid] = 201
 default[:oracle][:user][:gid] = 201
 default[:oracle][:user][:shell] = '/bin/ksh'
+default[:oracle][:user][:oinstall_group_exists] = false
 default[:oracle][:user][:sup_grps] = {'dba' => 202, 'bckpdba' => 203, 'dgdba' => 204, 'kmdba' => 205}
 default[:oracle][:user][:pw_set] = false
 default[:oracle][:user][:edb] = 'oracle'
